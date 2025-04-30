@@ -1,4 +1,6 @@
 #import "@preview/muchpdf:0.1.0": muchpdf
+#import "@preview/subpar:0.2.2"
+#import "@preview/numberingx:0.0.1": formatter
 
 #let fig(caption, path, width: 100%) = {
   figure(caption: caption)[
@@ -9,3 +11,8 @@
     }
   ]
 }
+
+#let subfig = subpar.grid.with(
+  numbering-sub: (sup, sub) => formatter("({lower-russian})")(sub),
+  numbering-sub-ref: formatter("{decimal}.{lower-russian}"),
+)

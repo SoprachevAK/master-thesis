@@ -1,6 +1,3 @@
-
-// TODO: Добавить таблицу
-
 #show figure: set block(breakable: true)
 
 #figure(caption: [Стоимость используемых Serverless ресурсов в Yandex Cloud на 01.05.2025])[
@@ -8,17 +5,17 @@
 
   #table(
     columns: (auto, auto, auto, 1fr),
-    stroke: 0.5pt + rgb("#2c2c2c"),
-    // align: (x, y) => if y == 0 { center } else if x == 0 { horizon } else { left },
-    align: center,
+    align: horizon,
     table.header(table.cell(colspan: 2)[Ресурс], [Стоимость], [Бесплатно]),
     table.cell(colspan: 2)[API Gateway], [`120₽/1М` запросов], [Первые `100k` в месяц],
     table.cell(rowspan: 3, colspan: 2)[Serverless Containsers],
     [`16₽/1М` вызовов], [Первые `1М` вызовов в месяц],
     [`3.2₽/ГБ×час` ОЗУ], [Первые `1ГБ×час` в месяц],
     [`4.8₽/vCPU×час`], [Первые `1vCPU×час` в месяц],
-    table.cell(colspan: 2)[Message Queue], [], [],
-    table.cell(colspan: 2)[Yandex Data Base], [], [],
+    table.cell(colspan: 2)[Message Queue], [`48.76₽/1М` запросов], [Первые `100k` в месяц],
+    table.cell(rowspan: 2, colspan: 2)[Yandex Data Base],
+    [`21.38₽/1М` Request Units], [Первый `1М` в месяц],
+    [`21.38₽/1ГБ×месяц`], [Первый `1ГБ` в месяц],
     table.cell(rowspan: 3, colspan: 1)[Object Storage\ (Standard)],
     [`GET`], [`0.39₽/10000`], [Первые `100k` в месяц],
     [`POST`], [`0.48₽/1000`], [Первые `10k` в месяц],

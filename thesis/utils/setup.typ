@@ -51,7 +51,7 @@
   set enum(numbering: formatter("{decimal}.{lower-russian}."))
 
   set par(
-    leading: 1em,
+    leading: 0.6em,
     justify: true,
     linebreaks: "optimized",
     first-line-indent: (amount: 1.25cm, all: true),
@@ -59,6 +59,8 @@
 
   set text(font: "Times New Roman", size: font-size, lang: "ru")
   show raw: set text(font: "Menlo", lang: "en")
+
+  set table(stroke: 0.5pt + rgb("#2c2c2c"))
 
   set outline(depth: 2)
   set bibliography(style: "gost-r-7-0-5-2008-numeric-alphabetical.csl", title: "Список литературы")
