@@ -1,6 +1,27 @@
 #import "@preview/numberingx:0.0.1": formatter
 
+
+#let shared(doc) = {
+  show outline.entry: it => {
+    let el = it.element
+    let lvl = it.level
+    let supp = el.supplement
+
+    if state("appendix", false).at(it.element.location()) {
+      if (it.level == 1) {
+        link(
+          el.location(),
+          it.indented([Приложение ] + it.prefix(), it.inner()),
+        )
+      }
+    } else { it }
+  }
+  doc
+}
+
 #let final(font-size: 14pt, doc) = {
+  show: shared
+
   set page(
     paper: "a4",
     margin: (left: 30mm, right: 10mm, y: 20mm),
@@ -39,6 +60,8 @@
 }
 
 #let normal(font-size: 12pt, doc) = {
+  show: shared
+
   set page(
     paper: "a4",
     margin: 2cm,
@@ -67,4 +90,37 @@
 
 
   doc
+}
+
+
+#let annexes(content) = {
+  [#none <annexes>]
+
+  set heading(
+    numbering: formatter("{upper-russian}.{decimal}."),
+    hanging-indent: 0pt,
+    supplement: [Приложение],
+  )
+
+  show heading.where(level: 1): it => {
+    set align(right)
+    block[
+      #upper([приложение]) #numbering(it.numbering, ..counter(heading).at(it.location()))\
+      #text(weight: "medium")[#it.body]
+    ]
+  }
+
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: raw)).update(0)
+    counter(math.equation).update(0)
+
+    pagebreak(weak: true)
+    it
+  }
+
+  state("appendix").update(true)
+  counter(heading).update(0)
+  content
 }

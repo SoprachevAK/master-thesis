@@ -46,3 +46,6 @@
 
 #pagebreak()
 #bibliography("biblio.bib")
+
+#show: annexes
+#include "parts/appendix/appendix.typ"
