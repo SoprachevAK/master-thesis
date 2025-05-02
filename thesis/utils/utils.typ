@@ -16,3 +16,15 @@
   numbering-sub: (sup, sub) => formatter("({lower-russian})")(sub),
   numbering-sub-ref: formatter("{decimal}.{lower-russian}"),
 )
+
+#let todo(doc) = {
+  block(
+    fill: rgb("#ffdec9"),
+    inset: 8pt,
+    radius: 4pt,
+    width: 100%,
+    [
+      #text(weight: "extrabold")[TODO:] #doc
+    ],
+  )
+}
