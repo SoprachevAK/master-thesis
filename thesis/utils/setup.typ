@@ -1,5 +1,6 @@
 #import "@preview/numberingx:0.0.1": formatter
-
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
 
 #let shared(doc) = {
   show outline.entry: it => {
@@ -16,6 +17,21 @@
       }
     } else { it }
   }
+
+
+  show: codly-init.with()
+  codly(
+    languages: codly-languages,
+    zebra-fill: none,
+    display-icon: false,
+    breakable: true,
+    smart-indent: true,
+    stroke: 0.5pt + rgb("#2c2c2c"),
+  )
+
+  show figure.where(kind: raw): set block(breakable: true)
+  show figure.where(kind: table): set block(breakable: true)
+  // set figure(placement: auto)
   doc
 }
 

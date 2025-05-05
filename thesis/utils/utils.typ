@@ -12,6 +12,12 @@
   ]
 }
 
+#let listing(caption, doc) = {
+  figure(caption: caption)[
+    #doc
+  ]
+}
+
 #let subfig = subpar.grid.with(
   numbering-sub: (sup, sub) => formatter("({lower-russian})")(sub),
   numbering-sub-ref: formatter("{decimal}.{lower-russian}"),
