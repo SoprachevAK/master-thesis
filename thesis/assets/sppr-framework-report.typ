@@ -135,7 +135,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Производительность])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [2], [2], [2], [2], [8 \* 0.17 = 1.37], [-],
@@ -148,7 +148,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Размер бандла])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [2], [2], [2], [2], [8 \* 0.06 = 0.48], [-],
@@ -161,7 +161,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории TypeScript])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [2], [1], [2], [1], [6 \* 0.17 = 1.03], [-],
@@ -174,7 +174,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Встроенные возможности])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [3], [3], [3], [3], [12 \* 0.09 = 1.03], [1.03 (Строго наиб.)],
@@ -187,7 +187,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Реактивность (model)])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [3], [3], [3], [3], [12 \* 0.17 = 2.05], [2.05 (Строго наиб.)],
@@ -200,7 +200,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Минимальные зависимости])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [2], [2], [2], [2], [8 \* 0.04 = 0.34], [-],
@@ -213,7 +213,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Стабильность API])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [1], [1], [1], [1], [4 \* 0.13 = 0.51], [-],
@@ -226,7 +226,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Инструменты разработки])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [3], [2], [3], [2], [10 \* 0.09 = 0.85], [-],
@@ -239,7 +239,7 @@
 
 #figure(caption: [Таблица результатов механизма K-max для категории Документация, сообщество])[
   #table(
-    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     align: horizon,
     table.header([], [HRo+\ ER+\ NR], [HRo+\ NR], [HRo+\ ER], [HRo], [Sjp], [Sjm]),
     [*Vue3*], [2], [2], [2], [2], [8 \* 0.09 = 0.68], [-],
