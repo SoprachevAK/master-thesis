@@ -30,7 +30,8 @@
   )
 
   show figure.where(kind: raw): set block(breakable: true)
-  show figure.where(kind: table): set block(breakable: true)
+  show figure.where(kind: table): set block(breakable: true, sticky: true)
+  // show figure.caption.where(kind: table): set block(sticky: true)
   // set figure(placement: auto)
   doc
 }
@@ -66,6 +67,7 @@
 
   set enum(full: true)
   set enum(numbering: formatter("{decimal}.{lower-russian}."))
+  set math.equation(numbering: "(1)")
 
   show figure.caption: set text(size: font-size - 1pt)
 
@@ -88,6 +90,7 @@
 
   set enum(full: true)
   set enum(numbering: formatter("{decimal}.{lower-russian}."))
+  set math.equation(numbering: "(1)")
 
   set par(
     leading: 0.6em,
