@@ -1,0 +1,157 @@
+@startuml
+' ===========================
+' Interfaces
+' ===========================
+interface IAnnotation {
+  +id: string
+  +scenePosition: Vector2
+  +isDirty: boolean
+  +isSelected: boolean
+  +isPinned: boolean
+  +frame: Box2
+  +bounds: Bounds
+
+  +zoom(zoom: number, animated?): void
+  +setSelected(selected: boolean, animated: boolean): void
+  +setPinned(pinned: boolean, animated: boolean): void
+  +updateScreenPosition(pos: Vector2): void
+
+  +pointInside(pos: Vector2): boolean
+  +intersect(rect: Box2): boolean
+
+  +draw(ctx: CanvasRenderingContext2D): void
+  +shouldDraw(screen: Box2): boolean
+  +style(styleSheet: any): void
+
+  +get renderOrder(): number
+  +get shouldSelectOnTap(): boolean
+}
+
+interface IAnnotationIndoor {
+  +level: Level
+  +building: Building
+}
+
+' ===========================
+' Base classes
+' ===========================
+class Shape2D {
+  +frame: Box2
+  +bounds: Bounds
+  +boundingBox: Box2
+  +screenPosition: Vector2
+
+  +updateScreenPosition(pos: Vector2): void
+  +updateBBox(width: number, height: number, offset?): void
+}
+
+class Annotation {
+  +id: string
+  +scenePosition: Vector2
+  +isDirty: boolean
+  +isSelected: boolean
+  +isPinned: boolean
+
+  #currentZoom: number
+  #data: any
+
+  +get renderOrder(): number
+  +get shouldSelectOnTap(): boolean
+
+  +setSelected(selected: boolean, animated: boolean): void
+  +setPinned(pinned: boolean, animated: boolean): void
+  +zoom(zoom: number, animated?): void
+  +pointInside(pos: Vector2): boolean
+  +intersect(rect: Box2): boolean
+  +shouldDraw(screen: Box2): boolean
+  +draw(ctx: CanvasRenderingContext2D): void
+  +style(styleSheet: any): void
+}
+
+class "DetailLevelAnnotation<DetailLevel, State>" as DetailLevelAnnotation {
+  #detailLevel: DetailLevel
+  #state: State
+  #evaluteDetailLevel(dd: DetailLevel, mapSize: number): State
+
+  +zoom(zoom: number, animated: boolean): void
+  #changeState(state: State, animated: boolean): void
+}
+
+class "AnimatedAnnotation<DetailLevel, State>" as AnimatedAnnotation {
+  +selectAnimation: Animator
+  +deSelectAnimation: Animator
+  +changeStateAnimator: Animator
+
+  #onAnim(): void
+  #onPinSelect(): void
+  #animateChangeState(animator: Animator, animated: boolean): void
+
+  +setSelected(selected: boolean, animated: boolean): void
+  +setPinned(pinned: boolean, animated: boolean): void
+}
+
+' ===========================
+' Concrete annotations
+' ===========================
+class OccupantAnnotation {
+  +building: Building
+  +level: Level
+  +img: HTMLImageElement
+
+  +updateTargetBBox(): void
+  #onPinSelect(): void
+  +style(styleSheet: any): void
+  +measureText(ctx: CanvasRenderingContext2D): void
+  +draw(ctx: CanvasRenderingContext2D): void
+}
+
+class AttractionAnnotation {
+  +targetBuilding: Building
+  +contentImg: HTMLImageElement
+
+  +updateTargetBBox(): void
+  #onPinSelect(): void
+  +measureText(ctx: CanvasRenderingContext2D): void
+  +draw(ctx: CanvasRenderingContext2D): void
+}
+
+class AmenityAnnotation {
+  +building: Building
+  +level: Level
+  +img: HTMLImageElement
+
+  +updateTargetBBox(): void
+  #onPinSelect(): void
+  +measureText(ctx: CanvasRenderingContext2D): void
+  +draw(ctx: CanvasRenderingContext2D): void
+}
+
+' ===========================
+' Inheritance / Implementation
+' ===========================
+Shape2D <|-- Annotation
+Annotation ..|> IAnnotation
+
+Annotation <|-- DetailLevelAnnotation
+DetailLevelAnnotation <|-- AnimatedAnnotation
+
+AnimatedAnnotation <|-- OccupantAnnotation
+AnimatedAnnotation <|-- AttractionAnnotation
+AnimatedAnnotation <|-- AmenityAnnotation
+
+' Indoor capability
+OccupantAnnotation ..|> IAnnotationIndoor
+AmenityAnnotation  ..|> IAnnotationIndoor
+
+' ===========================
+' Associations
+' ===========================
+' OccupantAnnotation --> Building : «building»
+' OccupantAnnotation --> Level    : «level»
+
+' AmenityAnnotation  --> Building : «building»
+' AmenityAnnotation  --> Level    : «level»
+
+' AttractionAnnotation --> Building : «targetBuilding»
+
+@enduml
