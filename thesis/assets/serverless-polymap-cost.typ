@@ -1,5 +1,3 @@
-#show figure: set block(breakable: true)
-
 #figure(caption: [Оценка ежемесячных затрат на Serverless ресурсы])[
   #show table.cell.where(y: 0): set text(weight: "bold")
 

@@ -1,0 +1,54 @@
+Express,421,421,421,5,4,5,421.0,4.6
+Express + validator,421,419,424,5,5,5,421.1,5.1
+Express + validator + moment,721,710,713,5,5,5,714.6,5.2
+Express + validator + moment + JSDOM,1392,1398,1399,15,14,15,1396.1,14.2
+Express + validator + moment + linkedom,716,715,716,5,6,6,715.6,5.6
+Express + linkedom,710,713,730,5,6,5,717.7,5.4
+,,,,,,,,
+Fastify,704,711,704,4,4,4,706.3,3.9
+Fastify + validator,705,705,702,4,4,4,703.7,4.0
+Fastify + moment,704,706,702,4,4,4,704.2,4.1
+Fastify + validator + moment,706,707,714,4,4,4,708.9,3.9
+Fastify + validator + moment + linkedom,712,710,709,5,5,5,710.5,5.0
+,,,,,,,,
+Express JS,269,415,265,4,4,4,316.2,4.1
+,,,,,,,,
+elixir + cowboy + plug + phoenix,1280,1277,1279,4,3,4,1278.9,3.5
+,,,,,,,,
+ESBuild -ext: express + moment + JSDOM,1406,1401,1407,20,20,21,1404.7,20.4
+ESBuild: express + moment + -ext: JSDOM,1378,1382,1388,14,13,13,1382.7,13.3
+ESBuild -ext: express + moment + linkedom,713,714,720,5,4,5,715.7,4.6
+ESBuild: express + moment + linkedom,425,418,424,6,5,5,422.2,5.1
+,,,,,,,,
+Parcel -ext: express + moment + linkedom,708,707,712,5,5,6,709.0,5.1
+Parcel: express + moment + linkedom,275,270,274,5,7,3,273.0,4.9
+,,,,,,,,
+Rollup: express + moment + linkedom,422,427,422,6,7,6,423.7,6.2
+Rollup: express + moment + linkedom + sharp,429,448,430,15,15,14,435.7,14.5
+Rollup: express + moment + linkedom + async sharp,524,516,520,15,14,15,520.0,14.7
+,,,,,,,,
+Webpack +min - sideEffect: express + moment + linkedom,427,426,434,6,5,5,429.0,5.2
+Webpack: express + moment + linkedom,432,435,440,6,6,6,435.7,6.1
+Webpack +min + sideEffect: express + moment + linkedom,280,276,278,12,20,18,278.0,16.7
+Webpack +min + sideEffect: express + moment + linkedom + sharp,434,431,432,15,15,15,432.3,15.0
+Webpack +min + sideEffect: express + linkedom + async sharp,377,378,381,14,15,14,378.7,14.3
+Webpack +min + sideEffect: express + async  linkedom + async sharp,386,379,386,15,14,14,383.7,14.3
+,,,,,,,,
+QR ,1278,1300,1292,50,41,56,1290.0,49.0
+QR/api,1253,1345,1246,54,52,75,1281.3,60.3
+QR+WebPack,702,780,735,47,45,52,739.0,48.0
+QR+WebPack + sharp - jimp,833,820,851,70,73,68,834.7,70.3
+,,,,,,,,
+"BUN node-slim, EXPRESS sharp + linkedom",934,912,958,18,20,15,934.7,17.7
+"BUN node-slim, Elysia sharp + linkedom",724,666,707,13,14,12,699.0,13.1
+BUN distroless Elysia echo,256,249,260,1,4,3,255.0,2.7
+BUN distroless hono echo,187,181,175,4,4,2,181.0,3.0
+BUN bundle hono echo,139,189,182,4,4,4,170.0,4.0
+BUN bundle executable,199,188,188,4,4,4,191.7,3.9
+,,,,,,,,
+NODE Webpack hono echo,214,288,226,4,5,4,242.7,4.3
+BUN bundle hono echo,168,179,165,7,6,6,170.7,6.2
+,,,,,,,,
+BUN TS express echo [node18-slim],387,391,409,5,5,5,395.7,5.0
+BUN build —external express echo [node18-slim],407,389,384,4.3,4,4,393.3,4.2
+BUN build express echo [node18-slim],384,397,371,5,5,4,384.0,4.9

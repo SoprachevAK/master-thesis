@@ -30,7 +30,7 @@
   )
 
   show figure.where(kind: raw): set block(breakable: true)
-  show figure.where(kind: table): set block(breakable: true, sticky: true)
+  show figure.where(kind: table): set block(breakable: true)
   // show figure.caption.where(kind: table): set block(sticky: true)
   // set figure(placement: auto)
   doc

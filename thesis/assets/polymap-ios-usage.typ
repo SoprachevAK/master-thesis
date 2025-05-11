@@ -1,5 +1,3 @@
-#show figure: set block(breakable: true)
-
 #figure(caption: [Потребляемые ресурсы пилотной версии PolyMap iOS за сентябрь 2024])[
   #show table.cell.where(y: 0): set text(weight: "bold")
 
