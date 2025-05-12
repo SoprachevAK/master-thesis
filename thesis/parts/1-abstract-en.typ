@@ -1,9 +1,8 @@
 = Abstract
 
 #context[#counter(page).final().at(0)] pages,
-#context[#counter("image").final().at(0)] figures,
-#context[#counter("table").final().at(0)] tables.
-
+#context [#query(figure.where(kind: image)).len()] figures,
+#context [#query(figure.where(kind: table)).len()] tables.
 
 #upper[
   Keywords:

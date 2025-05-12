@@ -1,8 +1,8 @@
 = Реферат
 
 На #context[#counter(page).final().at(0)] с.,
-#context[#counter("image").final().at(0)] рис.,
-#context[#counter("table").final().at(0)] табл.
+#context [#query(figure.where(kind: image)).len()] рис.,
+#context [#query(figure.where(kind: table)).len()] табл.
 
 #upper[
   Ключевые слова:

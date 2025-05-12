@@ -31,8 +31,11 @@
 #outline(depth: 3, indent: 1em)
 #pagebreak()
 
-#set heading(numbering: none)
-#include "parts/2-introduction.typ"
+#{
+  set heading(numbering: none, outlined: false)
+  show heading.where(level: 1): set heading(outlined: true)
+  include "parts/2-introduction.typ"
+}
 
 #{
   set heading(numbering: "1.1")
@@ -40,7 +43,11 @@
   include "parts/3-main-part.typ"
 }
 
-#include "parts/4-conclusion.typ"
+#{
+  set heading(numbering: none, outlined: false)
+  show heading.where(level: 1): set heading(outlined: true)
+  include "parts/4-conclusion.typ"
+}
 
 #pagebreak()
 #bibliography("biblio.bib")
