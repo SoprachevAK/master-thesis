@@ -152,8 +152,8 @@ MazeMap -- работает в формате SAAS (Software as a Service), то
 Mappedin -- Работает в формате SAAS, прозрачное ценообразование, открытый конструктор карт. Промо-ролик на главной странице сайта выглядит красиво, но не соответствует действительности. Реальные примеры карт общедоступны. Если сервис сможет сделать свои карты так, как показано в концептуальном видео, то это будет наиболее качественный сервис на рынке.
 
 #subfig(
-  figure(image("../assets/alternatives/mappdin-concept.jpg"), caption: [Концепт]),
-  figure(image("../assets/alternatives/mappedin.jpg"), caption: [Реальные карты]),
+  figure(image("../assets/alternatives/mappdin-concept.jpg"), caption: [Обещание на сайте]),
+  figure(image("../assets/alternatives/mappedin.jpg"), caption: [Реальная карта]),
   columns: (1fr, 0.56fr),
   caption: [Пример Mappedin],
 )

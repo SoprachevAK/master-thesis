@@ -1,9 +1,56 @@
 #figure(caption: [Сравнение таблица существующих решений])[
   #show table.cell.where(y: 0): set text(weight: "bold")
 
+
+  #let data = (
+    ("Наличие веб-версии", "+", "+", "+-", "-", "+", "+"),
+    ("Поддержка ПК", "+", "+", "+", "-", "+", "+"),
+    ("Поддержка мобильных телефонов", "+", "+", "+", "+", "+-", "-"),
+    ("Поддержка нескольких зданий на карте", "+", "+", "+", "+", "+-", "+"),
+    ("Поддержка маршрутов по помещениям", "-", "-", "-", "+", "+", "+"),
+    ("Поддержка сквозных маршрутов", "-", "-", "-", "+", "+-", "+"),
+    ("Высокая производительность", "+-", "+", "+", "+", "+-", "+-"),
+    ("Ортографический 2D", "-", "-", "+", "+", "-", "+-"),
+    ("Поддержка 3D", "+", "+", "+", "-", "+", "-"),
+    ("Размещение своих карт", "-", "-", "-", "+", "+", "+"),
+    ("Своя планировка территории", "-", "-", "-", "-", "-", "+"),
+    ("Наличие конструктора карт", "+-", "-", "+-", "+-", "+", "-"),
+    ("Прозрачное ценообразование", "+", "+", "+", "-", "+", "-"),
+  )
+
+
   #table(
-    columns: (auto, auto, auto, auto),
-    align: horizon,
-    table.header([Тест], [Bun], [Deno], [Node]),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
+    align: (horizon + left, horizon),
+    table.header(
+      [Критерий],
+      rotate(-90deg, reflow: true)[Yandex],
+      rotate(-90deg, reflow: true)[Google],
+      rotate(-90deg, reflow: true)[Apple],
+      rotate(-90deg, reflow: true)[MazeMap],
+      rotate(-90deg, reflow: true)[Mappedin],
+      rotate(-90deg, reflow: true)[Concept3D],
+    ),
+
+    ..data
+      .map(r => (
+        [#r.at(0)],
+        r
+          .slice(1)
+          .map(t => {
+            if t == "" {
+              return []
+            } else if t == "+" {
+              return [$+$]
+            } else if t == "-" {
+              return [$-$]
+            } else if t == "+-" {
+              return [$plus.minus$]
+            } else {
+              return [$#t$]
+            }
+          }),
+      ))
+      .flatten()
   )
 ]
