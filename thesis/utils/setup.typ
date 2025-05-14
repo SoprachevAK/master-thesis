@@ -31,8 +31,12 @@
 
   show figure.where(kind: raw): set block(breakable: true)
   show figure.where(kind: table): set block(breakable: true)
-  // show figure.caption.where(kind: table): set block(sticky: true)
-  // set figure(placement: auto)
+
+
+  set enum(full: true)
+  set enum(numbering: formatter("{decimal}.{lower-russian}."))
+  set math.equation(numbering: "(1)")
+
   doc
 }
 
@@ -58,16 +62,23 @@
   show heading: set align(center)
   show heading: set text(size: font-size)
 
-  show heading.where(level: 1): it => block(above: 3em)[#upper()[#it]]
-  show heading.where(level: 2): it => block(above: 2em)[#it]
+
+  show heading: set block(below: 1.2em)
+  // show heading: set block(stroke: 0.5pt + rgb("#2c2c2c"))
+
+  show heading.where(level: 1): it => upper()[#it]
   show heading.where(level: 3): it => {
-    set text(weight: "regular")
-    block(above: 2em)[#it.body]
+    emph[#block(above: 1.2em)[#it]]
   }
 
-  set enum(full: true)
-  set enum(numbering: formatter("{decimal}.{lower-russian}."))
-  set math.equation(numbering: "(1)")
+  show heading.where(level: 4): it => {
+    set align(left)
+    block(above: 1.2em)[#it.body]
+  }
+
+  show figure.where(kind: table): set figure.caption(position: top)
+  show table: set par(leading: 0.6em, justify: false)
+
 
   show figure.caption: set text(size: font-size - 1pt)
 
@@ -88,10 +99,6 @@
   set heading(numbering: "1.")
 
 
-  set enum(full: true)
-  set enum(numbering: formatter("{decimal}.{lower-russian}."))
-  set math.equation(numbering: "(1)")
-
   set par(
     leading: 0.6em,
     justify: true,
@@ -110,7 +117,6 @@
 
   doc
 }
-
 
 #let annexes(content) = {
   [#none <annexes>]
@@ -134,6 +140,7 @@
     counter(figure.where(kind: table)).update(0)
     counter(figure.where(kind: raw)).update(0)
     counter(math.equation).update(0)
+    counter("appendix").step()
 
     pagebreak(weak: true)
     it
