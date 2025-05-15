@@ -1,5 +1,5 @@
 
-#import "/utils/setup.typ": conf
+#import "./utils/setup.typ": conf
 
 #show: conf
 #set document(
@@ -8,9 +8,9 @@
   date: auto,
 )
 
-#include "/parts/nir/plan.typ"
+#include "./title/plan.typ"
 #pagebreak()
-#include "/parts/nir/report.typ"
+#include "./title/report.typ"
 #pagebreak()
 
 
@@ -19,8 +19,8 @@
 #outline()
 #show heading.where(level: 1): set heading(numbering: "1.")
 #set page(numbering: "1")
-#include "/parts/page1.typ"
+#include "./parts/page1.typ"
 
 #pagebreak()
 #show heading.where(level: 1): set heading(numbering: none)
-#bibliography("parts/biblio.bib")
+#bibliography("./parts/biblio.bib")

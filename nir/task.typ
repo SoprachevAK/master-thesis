@@ -1,5 +1,5 @@
 
-#import "/utils/setup.typ": conf
+#import "./utils/setup.typ": conf
 
 #show: conf
 #set document(
@@ -8,7 +8,7 @@
   date: auto,
 )
 
-#import "/parts/nir/shared.typ": small-header
+#import "./title/shared.typ": small-header
 
 #set page(margin: (left: 20mm, right: 20mm, y: 20mm))
 #set par(leading: 0.5em, first-line-indent: 0pt)
