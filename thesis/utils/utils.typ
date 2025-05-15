@@ -24,13 +24,13 @@
 )
 
 #let todo(doc) = {
-  block(
-    fill: rgb("#ffdec9"),
-    inset: 8pt,
-    radius: 4pt,
-    width: 100%,
-    [
-      #text(weight: "extrabold")[TODO:] #doc
-    ],
-  )
+  // block(
+  //   fill: rgb("#ffdec9"),
+  //   inset: 8pt,
+  //   radius: 4pt,
+  //   width: 100%,
+  //   [
+  //     #text(weight: "extrabold")[TODO:] #doc
+  //   ],
+  // )
 }
