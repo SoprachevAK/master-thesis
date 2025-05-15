@@ -37,6 +37,9 @@
   set enum(numbering: formatter("{decimal}.{lower-russian}."))
   set math.equation(numbering: "(1)")
 
+  set bibliography(style: "gost-r-705-2008-numeric", title: "Список использованных источников")
+  set outline(depth: 2)
+
   doc
 }
 
@@ -81,10 +84,6 @@
 
 
   show figure.caption: set text(size: font-size - 1pt)
-
-  set outline(depth: 2)
-  set bibliography(style: "gost-r-7-0-5-2008-numeric-alphabetical.csl", title: "Список литературы")
-
   doc
 }
 
@@ -110,11 +109,6 @@
   show raw: set text(font: "Menlo", lang: "en")
 
   set table(stroke: 0.5pt + rgb("#2c2c2c"))
-
-  set outline(depth: 2)
-  set bibliography(style: "gost-r-7-0-5-2008-numeric-alphabetical.csl", title: "Список литературы")
-
-
   doc
 }
 
