@@ -7,7 +7,7 @@
 )
 
 #show: normal.with(font-size: 12pt)
-// #show: final.with(font-size: 14pt)
+#show: final.with(font-size: 14pt)
 
 
 
@@ -21,6 +21,7 @@
 #{
   set heading(numbering: none, outlined: false)
   include "parts/1-abstract-ru.typ"
+  pagebreak()
   include "parts/1-abstract-en.typ"
   pagebreak()
 }
