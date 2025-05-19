@@ -27,10 +27,10 @@
 }
 
 
-#set page(numbering: "1")
-
 #outline(depth: 3, indent: 1em)
 #pagebreak()
+
+#set page(numbering: "1")
 
 #{
   set heading(numbering: none, outlined: false)

@@ -1,6 +1,6 @@
 
 
-#set text(font: "Times New Roman", size: 12pt, lang: "ru")
+#set text(font: "Times New Roman", size: 12pt, lang: "ru", hyphenate: false)
 
 #set par(
   justify: true,
@@ -29,9 +29,13 @@
     УТВЕРЖДАЮ\
     Директор ВШПИ
     #v(-0.5em)
-    #align(right)[П. Д. Дробинцев]
+    #stack(dir: ltr, spacing: 0.3em, align(bottom)[#line(length: 5.5em, stroke: 0.5pt)], [П. Д. Дробинцев])
     #v(-0.5em)
-    #sym.quote.angle.l.double #h(1.5em) #sym.quote.angle.r.double #h(80pt) 2025 г.
+    #sym.quote.angle.l.double
+    #box[#line(length: 2em, stroke: 0.5pt)]
+    #sym.quote.angle.r.double
+    #h(0.2em)
+    #box[#line(length: 6em, stroke: 0.5pt)] 2025 г.
   ],
 )
 
@@ -71,8 +75,8 @@
   grid(
     columns: (1fr, 130pt, 0pt, 110pt, 0pt),
     row-gutter: (2em, 1em),
-    [Руководитель ВКР], [], [\/], [Дробинцев П. Д.], [\/],
+    [Руководитель ВКР], [], [], [Дробинцев П. Д.], [],
     [Задание принял к исполнению 01.04.2025], [], [], [], [],
-    [Студент], [], [\/], [Сопрачев А. К.], [\/],
+    [Студент], [], [], [Сопрачев А. К.], [],
   )
 }
