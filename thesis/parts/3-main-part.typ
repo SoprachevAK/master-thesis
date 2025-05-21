@@ -689,7 +689,7 @@ SPA-приложения работают следующим образом: с 
 
 #fig(
   "Диаграмма классов системы аннотаций",
-  "../assets/annotation/diagram.svg",
+  "../assets/annotation/diagram.png",
   width: 80%,
 )<annotation-uml>
 
