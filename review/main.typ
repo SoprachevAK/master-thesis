@@ -7,14 +7,15 @@
 
 #set page(margin: 20mm)
 #set par(leading: 0.5em, first-line-indent: 0pt)
-#set text(size: 12pt, lang: "ru")
-#set text(font: "Times New Roman")
+#set text(size: 11pt, lang: "ru")
+#set text(font: "Arial")
 
-#show heading.where(level: 1): set text(size: 14pt)
+#show heading.where(level: 1): set text(size: 16pt, weight: "regular")
+#show heading.where(level: 1): it => block(above: 2em, below: 0.75em)[#it]
 
 #{
   set align(center)
-  text(weight: "black", size: 16pt)[
+  text(weight: 600, size: 16pt)[
     #upper[Рецензия]\
   ]
 
